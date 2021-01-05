@@ -33,16 +33,26 @@ const _ = {
       return true;
     }
   },
+  invert(obj) {
+    const invertedObj = {};
+    for (const key in obj) {
+     invertedObj[obj[key]] = key;
+    }
+    return invertedObj;
+  },
 };
 
-const myobj = {
-  // mykey: ''
+const car = {
+  model: 'Sorento',
+  brand: 'Kia'
 }
+
 // console.log(_.clamp(5, 2, 4));
 // console.log(_.inRange(5, 10, 4));
 // console.log(_.words('fred, barney, & pebbles'));
 // console.log(_.pad('hi', 1));
-console.log(_.has(myobj, 'mykey'));
+// console.log(_.has(myobj, 'mykey'));
+// console.log(_.invert(car));
 
 // Do not write or modify code below this line.
 module.exports = _;
